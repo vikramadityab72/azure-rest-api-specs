@@ -2421,6 +2421,10 @@
         "enableDataResidency": {
           "description": "This property when set to true, will enable data residency, thus, disabling disaster recovery.",
           "type": "boolean"
+        },
+        "mqttBroker": {
+          "description": "This property contains set of mqttBroker properties",
+          "$ref": "#/definitions/mqttBroker"
         }
       }
     },
@@ -4452,6 +4456,21 @@
           "description": "The timestamp of resource last modification (UTC)"
         }
       }
+    },
+    "mqttBroker": {
+      "description": "The properties of the mqtt Broker such as host name.",
+      "type": "object",
+      "properties": {
+        "hostName": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The mqtt Broker host name."
+        },
+        "enable": {
+          "type": "boolean",
+          "description": "This Boolean flag determines whether or not the MQTT Broker is enabled. This flag is createonly field. This flag cannot be updated"
+        }
+      } 
     }
   },
   "parameters": {
